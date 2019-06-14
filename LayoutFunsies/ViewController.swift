@@ -63,6 +63,39 @@ class ViewController: UIViewController {
                 return section
                 
             case .memories:
+                
+                // The bigger, left-hand pic.
+                let picItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(2.0/3.0),
+                                                         heightDimension: .fractionalHeight(1.0))
+                let picItem = NSCollectionLayoutItem(layoutSize: picItemSize)
+                picItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+                
+                // The mini, thumbnail pics.
+                let thumbItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                           heightDimension: .fractionalHeight(1))
+                let thumbItem = NSCollectionLayoutItem(layoutSize: thumbItemSize)
+                thumbItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+                
+                // Group for the thumbnails
+                let thumbGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0/3.0),
+                                                            heightDimension: .fractionalHeight(1.0))
+                let thumbGroup = NSCollectionLayoutGroup.vertical(layoutSize: thumbGroupSize, subitem: thumbItem, count: 2)
+                
+                // Group for a memory (a pic and two thumbnails)
+                let memoryGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                             heightDimension: .fractionalHeight(1.0))
+                let memoryGroup = NSCollectionLayoutGroup.horizontal(layoutSize: memoryGroupSize,
+                                                                     subitems: [picItem,thumbGroup])
+                
+                // Group to host the entire section
+                let fraction: CGFloat = 0.8
+                let sectionGroupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1 * fraction),
+                                                              heightDimension: .fractionalWidth(2.0 * fraction / 3.0))
+                let sectionGroup = NSCollectionLayoutGroup.horizontal(layoutSize: sectionGroupSize, subitems: [memoryGroup])
+                let section = NSCollectionLayoutSection(group: sectionGroup)
+                section.orthogonalScrollingBehavior = .groupPagingCentered
+                return section
+                
             }
         }
         
