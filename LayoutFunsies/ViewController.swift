@@ -30,7 +30,22 @@ class ViewController: UIViewController {
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         view = collectionView
     }
+    
+    func createLayout() -> UICollectionViewLayout {
 
+        return UICollectionViewCompositionalLayout { (section, env) -> NSCollectionLayoutSection? in
+            switch Section(rawValue: section)! {
+            case .list:
+                
+            case .pics:
+                
+            case .memories:
+            }
+        }
+        
+    }
+    
+}
 
 }
 
