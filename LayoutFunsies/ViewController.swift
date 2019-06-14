@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    enum Section: Int {
+        case list
+        case pics
+        case memories
     }
     // MARK: - VC Overrides
     
