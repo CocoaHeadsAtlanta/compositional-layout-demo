@@ -24,6 +24,7 @@
 		A6F36FC722B3140C00D9FB24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6F36FCA22B3140C00D9FB24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6F36FCC22B3140C00D9FB24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6F36FD222B3149C00D9FB24 /* LayoutFunsies.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LayoutFunsies.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +57,7 @@
 		A6F36FBD22B3140A00D9FB24 /* LayoutFunsies */ = {
 			isa = PBXGroup;
 			children = (
+				A6F36FD222B3149C00D9FB24 /* LayoutFunsies.entitlements */,
 				A6F36FBE22B3140A00D9FB24 /* AppDelegate.swift */,
 				A6F36FC022B3140A00D9FB24 /* SceneDelegate.swift */,
 				A6F36FC222B3140A00D9FB24 /* ViewController.swift */,
@@ -284,8 +286,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LayoutFunsies/LayoutFunsies.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VMY8R4T742;
+				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LayoutFunsies/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -293,6 +297,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.mikey.LayoutFunsies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_UIKITFORMAC = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,8 +307,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LayoutFunsies/LayoutFunsies.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VMY8R4T742;
+				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = LayoutFunsies/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -311,6 +318,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.mikey.LayoutFunsies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_UIKITFORMAC = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
