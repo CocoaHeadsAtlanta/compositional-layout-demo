@@ -15,6 +15,8 @@ class ViewController: UIViewController {
         case pics
         case memories
     }
+    
+    var collectionView: UICollectionView! = nil
     // MARK: - VC Overrides
     
     
