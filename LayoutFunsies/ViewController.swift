@@ -11,6 +11,19 @@ import UIKit
 class ViewController: UIViewController {
 
     }
+    // MARK: - VC Overrides
+    
+    
+    override func loadView() {
+        title = "Meeeemories"
+        
+        let layout = createLayout()
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.autoresizingMask = [.flexibleWidth,.flexibleHeight]
+        collectionView.dataSource = self
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        view = collectionView
+    }
 
 
 }
