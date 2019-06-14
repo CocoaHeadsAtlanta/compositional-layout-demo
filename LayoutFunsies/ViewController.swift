@@ -49,6 +49,18 @@ class ViewController: UIViewController {
                 return section
                 
             case .pics:
+                let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalHeight(1),
+                                                      heightDimension: .fractionalHeight(1))
+                let item = NSCollectionLayoutItem(layoutSize: itemSize)
+                item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
+                
+                let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9),
+                                                       heightDimension: .absolute(100))
+                let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+                
+                let section = NSCollectionLayoutSection(group: group)
+                section.orthogonalScrollingBehavior = .groupPagingCentered
+                return section
                 
             case .memories:
             }
