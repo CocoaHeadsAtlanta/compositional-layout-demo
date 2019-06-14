@@ -103,5 +103,30 @@ class ViewController: UIViewController {
     
 }
 
+extension ViewController: UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int { 3 }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { 20 }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        
+        switch Section(rawValue: indexPath.section)! {
+        case .list:
+            cell.backgroundColor = .systemBlue
+        case .pics:
+            cell.backgroundColor = .systemRed
+        case .memories:
+            cell.backgroundColor = .systemGreen
+        }
+        
+        cell.layer.borderColor = UIColor.white.cgColor
+        cell.layer.borderWidth = 3
+        cell.layer.cornerCurve = .continuous
+        cell.layer.cornerRadius = 20
+        return cell
+    }
+    
 }
 
